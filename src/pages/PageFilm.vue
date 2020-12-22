@@ -37,7 +37,7 @@ export default {
       try {
         const film = await axios.get(`https://floating-sierra-20135.herokuapp.com/api/movie/${this.film.id}`)
         this.film = film
-        console.log(this.film, 'axios')
+        // console.log(this.film, 'axios')
       } catch (e) {}
     },
   },
