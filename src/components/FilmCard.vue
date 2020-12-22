@@ -5,7 +5,7 @@
     </div>
     <div class="film-info">
       <div class="film-header">
-        <router-link  v-if="film.url && theme == 'hover'" :to="`film/${film.url}`" ><div class="film-header__title" @click="setActiveFilm(film)">{{ film.title }}</div></router-link>
+        <router-link  v-if="film.url && theme == 'hover'" :to="`film/${film.id}`" ><div class="film-header__title" @click="setActiveFilm(film)">{{ film.title }}</div></router-link>
         <div v-else class="film-header__title"> {{film.title}} </div>
         <div v-if="film.collapse.duration" class="film-header__times">
           <div class="times">{{ film.collapse.duration.join(', ') }}</div>
@@ -36,11 +36,6 @@ export default {
       type: String,
       required: true
     }
-  },
-  data() {
-    return {
-      id: +this.$route.params.id,
-    };
   },
   computed: {
     listFilms() {

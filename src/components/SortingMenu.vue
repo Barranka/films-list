@@ -30,6 +30,7 @@ export default {
       this.sortedFilms();
     },
     sortedFilms() {
+      if (!this.listFilms) return
       this.listFilms.sort((a, b) => (a[this.currentSort] < b[this.currentSort]) ? -1 : 1);
       this.$store.dispatch('setSortedFilms', this.listFilms);
     }

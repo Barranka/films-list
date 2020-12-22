@@ -30,7 +30,6 @@ export default new Vuex.Store({
 			commit('setFilms', sortedFilms)
 		},
 		setActiveFilm({commit}, activeFilm) {
-			console.log(activeFilm)
 			commit('setActiveFilm', activeFilm)
 		}
 	},

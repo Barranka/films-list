@@ -19,7 +19,7 @@ export default new Router({
 			component: PageListFilms
 		},
 		{
-			path: '/film/:url',
+			path: '/film/:id',
 			name: 'film',
 			component: PageFilm
 		},

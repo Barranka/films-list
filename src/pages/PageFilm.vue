@@ -1,6 +1,9 @@
 <template>
   <div class="container-content">
-    <section>
+    <div class="preloading-container" v-if="loading">
+      <Preloading />
+    </div>
+    <section v-else>
       <div class="film-back-link">
         <router-link class="film-back-link__link" :to="'/'">
           <div class="film-back-link__wrap">
@@ -24,25 +27,36 @@
 
 <script>
 import FilmCard from '@/components/FilmCard.vue'
+import Preloading from '@/components/Preloading.vue'
+import axios from "axios"
 
 export default {
-  components: { FilmCard },
-  watch: {
-    $route(to, from) {
-      this.getData();
-    }
+  components: { FilmCard, Preloading },
+  data() {
+    return {
+      film: null,
+      loading: false
+    };
+  },
+  created() {
+    if (this.filmStore) this.film = this.filmStore
+    else this.getData()
   },
   methods: {
     async getData() {
+      this.loading = true
       try {
-        const film = await axios.get(`https://floating-sierra-20135.herokuapp.com/api/movie/${this.film.id}`)
-        this.film = film
-        // console.log(this.film, 'axios')
-      } catch (e) {}
+        const { data: {data} } = await axios.get(`https://floating-sierra-20135.herokuapp.com/api/movie/${this.$route.params.id}`)
+        this.film = data
+      } catch (e) {
+        console.error(e)
+      } finally {
+        this.loading = false
+      }
     },
   },
   computed: {
-    film() {
+    filmStore() {
       return this.$store.getters.getActiveFilm
     }
   },
