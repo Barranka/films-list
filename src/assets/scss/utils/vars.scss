@@ -1,13 +1,14 @@
 // Font
-$mainFont                : 'Montserrat', Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+$mainFont                :'Roboto', sans-serif;
 
 // Size
-$mainFontColor           : #101010;
-$mainFontSize            : 18px;
+$mainFontColor           : #ffffff;
+$mainFontSize            : 12px;
 $mainFontWeight          : 400;
-$mainLineHeight          : 1.4;
+$mainLineHeight          : 12px;
 
-$desktopWidth            : 1280px;
+$desktopWidth            : 1432px; // include padding
 $smDesktopWidth          : 980px;
 $tableWidth              : 768px;
 $phoneWidth              : 480px;
@@ -16,23 +17,13 @@ $smPhoneWidth            : 320px;
 
 
 
-// Main color
-$default-color           : #ffffff;
-$primary-color           : #444ce0;
-$success-color           : #26de81;
-$danger-color            : #fc5c65;
-$warning-color           : #fed330;
-$light-color             : #999999;
-$purple-color            : #8854d0;
-
-// Neutral Color
-$neutral-primary         : #303133;
-$neutral-regular         : #606266;
-$neutral-secondary       : #909399;
-$neutral-placeholder     : #C0C4CC;
-
-// Border Color
-$border-base             : #DCDFE6;
-$border-light            : #E4E7ED;
-$border-lighter          : #EBEEF5;
-$border-lightex          : #F2F6FC;
+// Main colors
+$white                  : #ffffff;
+$black                  : #000000;
+$default-color          : #FA2828;
+$default-pale           : #FF5252;
+$grey-fisrt             : #C4C4C4;
+$grey-second            : #988F8F;
+$grey-third             : #4D4747;
+$grey-fourth            : #E5E5E5;
+$background-color       : #363232;

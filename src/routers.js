@@ -5,9 +5,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 //Pages
-import Home from '@/pages/Home'
+import PageListFilms from '@/pages/PageListFilms'
+import PageFilm from '@/pages/PageFilm'
 import NotFound from '@/pages/404'
-import Example from '@/pages/Example'
 
 //Routering
 export default new Router({
@@ -15,13 +15,17 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
-			name: 'home',
-			component: Home	
+			name: 'list-films',
+			component: PageListFilms
 		},
 		{
-			path: '/example',
-			name: 'example',
-			component: Example 
+			path: '/film/:url',
+			name: 'film',
+			component: PageFilm
+		},
+		{
+			path: '/film',
+			redirect: "/"
 		},
 		{
 			path: '*',

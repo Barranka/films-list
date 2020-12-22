@@ -1,0 +1,43 @@
+.sorting-menu {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $grey-fisrt;
+}
+.title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+}
+.vars-sort {
+    display: flex;
+    padding: 18px 0;
+    &__label {
+        font-size: 16px;
+        line-height: 16px;
+        color: $grey-fisrt;
+        margin-right: 34.5px;
+        display: inline-block;
+	    cursor: pointer;
+	    position: relative;
+	    padding-left: 25px;
+	    line-height: 18px;
+	    user-select: none;
+    }
+    &__label::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background: url('~@/assets/images/checkbox.svg') 0 0 no-repeat;
+    }
+    &__input {
+        margin-right: 12px;
+        display: none;
+    }
+    &__input:checked + &__label::before {
+        background: url('~@/assets/images/checkbox-active.svg') 0 0 no-repeat;
+    }
+}
